@@ -1,14 +1,35 @@
 class Character {
   constructor() {
-    this.x = canvas.width / 2;
-    this.y = canvas.height / 2;
+    this.x = 200;
+    this.y = 629;
+    this.width = 70;
+    this.height = 120;
+    this.vy = 0;
+    this.weight = 1;
   }
   draw() {
     context.fillStyle = "red";
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.fillRect(10, temp, 50, 90);
+    context.fillRect(this.x, this.y, this.width, this.height);
+  }
+  update() {
+    // checking for bottom wall collision and preventing in
+    if (this.y > canvas.height - this.height) {
+      this.y = canvas.height - this.height;
+      this.vy = 0;
+    } else {
+      this.vy += this.weight;
+      this.y += this.vy;
+    }
+    // checking for top wall collision and preventing in
+    if (this.y < -120 + this.height) {
+      this.y = -120 + this.height;
+      this.vy = 0;
+    }
   }
 }
 
 const character = new Character();
-console.log("loaded character.js");
+
+const jump = () => {
+  character.y = 300;
+};

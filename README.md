@@ -16,7 +16,7 @@
 
 > ## Info about this project <br/>
 >
-> > ### This project is simple super mario game in js.
+> > ### This project is simple T-rex runner game in js.
 
 ### That's is from me, I wish you a wonderful day .
 
