@@ -1,11 +1,8 @@
 const input = () => {
   window.onkeydown = (e) => {
-    if (!jumped) {
+    if (e.code === "Space") {
       jumped = true;
-      if (e.code === "Space") {
-        jumped = true;
-        jump();
-      }
+      console.log(jumped);
     }
   };
 
@@ -16,12 +13,3 @@ const input = () => {
     }
   };
 };
-// testing purposes
-const func = (sec) => {
-  requestAnimationFrame(func);
-  let timeInSeconds = Math.floor(sec / 1000);
-  console.log(timeInSeconds);
-  if (timeInSeconds === 10) return;
-};
-
-func();

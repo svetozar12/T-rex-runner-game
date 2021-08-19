@@ -15,3 +15,10 @@ const update = () => {
 update();
 
 input();
+
+// const func = (sec) => {
+//   const reqId = requestAnimationFrame(func);
+//   let timeInSeconds = Math.floor(sec / 1000);
+//   console.log(timeInSeconds);
+//   if (jumped) cancelAnimationFrame(reqId);
+// };
