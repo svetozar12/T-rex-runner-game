@@ -1,24 +1,30 @@
 class Character {
   constructor(x, y, w, h, color) {
-    this.x = x; //200
-    this.y = y; //629
-    this.w = w; //70
-    this.h = h; //120
-    this.color = color; //red
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.color = color;
     this.dy = 0;
     this.weight = 1;
     this.jumpTimer = 0;
     this.grounded = false;
   }
   draw() {
-    context.fillStyle = "red";
+    context.fillStyle = this.color;
     context.fillRect(this.x, this.y, this.w, this.h);
   }
   update() {
     if (jumped) this.grounded = false;
     else this.grounded = true;
-    // checking for bottom wall collision and preventing in
+
+    if (moreG) this.weight = 9;
+    else {
+      moreG = false;
+      this.weight = 1;
+    }
     if (this.y > canvas.height - this.h) {
+      // checking for bottom wall collision and preventing in
       this.y = canvas.height - this.h;
       this.dy = 0;
     } else {
@@ -40,12 +46,9 @@ class Character {
     } else if (this.jumpTimer > 0 && this.jumpTimer < 15 && !this.grounded) {
       this.jumpTimer++;
       this.dy = -10;
-      console.log(this.jumpTimer);
     } else {
       this.grounded = true;
-      console.log(this.jumpTimer);
     }
   }
 }
 const character = new Character(200, 629, 70, 120, "red");
-console.log("loaded character.js");
