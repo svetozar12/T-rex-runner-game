@@ -1,9 +1,10 @@
 class Character {
-  constructor() {
-    this.x = 200;
-    this.y = 629;
-    this.width = 70;
-    this.height = 120;
+  constructor(x, y, w, h, color) {
+    this.x = x; //200
+    this.y = y; //629
+    this.w = w; //70
+    this.h = h; //120
+    this.color = color; //red
     this.dy = 0;
     this.weight = 1;
     this.jumpTimer = 0;
@@ -11,23 +12,22 @@ class Character {
   }
   draw() {
     context.fillStyle = "red";
-    context.fillRect(this.x, this.y, this.width, this.height);
+    context.fillRect(this.x, this.y, this.w, this.h);
   }
   update() {
     if (jumped) this.grounded = false;
     else this.grounded = true;
-    // console.log(this.grounded + " gro");
     // checking for bottom wall collision and preventing in
-    if (this.y > canvas.height - this.height) {
-      this.y = canvas.height - this.height;
+    if (this.y > canvas.height - this.h) {
+      this.y = canvas.height - this.h;
       this.dy = 0;
     } else {
       this.dy += this.weight;
       this.y += this.dy;
     }
     // checking for top wall collision and preventing in
-    if (this.y < -120 + this.height) {
-      this.y = -120 + this.height;
+    if (this.y < -120 + this.h) {
+      this.y = -120 + this.h;
       this.dy = 0;
     }
     if (jumped) this.jump();
@@ -47,5 +47,5 @@ class Character {
     }
   }
 }
-const character = new Character();
+const character = new Character(200, 629, 70, 120, "red");
 console.log("loaded character.js");
