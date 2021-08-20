@@ -17,6 +17,8 @@
 > ## Info about this project <br/>
 >
 > > ### This project is simple T-rex runner game in js.
+> >
+> > ### Controls Space,w or arrowUp for jump, arrowDown or s to fall faster, enter to pause or unpause
 
 ### That's is from me, I wish you a wonderful day .
 

@@ -5,9 +5,10 @@ class Obstacles {
     this.x = x + Math.random() * -1000;
     this.y = 629;
     this.w = 30;
-    this.h = 30;
+    this.h = 50;
     this.color = "green";
     this.obstacleSpeed = 4;
+    this.score = 0;
     // this.randomX = Math.random() * (1600 - 1300) + 1300;
   }
   draw() {
@@ -22,12 +23,13 @@ class Obstacles {
       this.y = canvas.height - this.h;
     }
   }
-  checkDistance() {}
 }
 
 const initObstacle = () => {
-  for (let i = 1800; i <= 40000; i += 500) {
-    list.push(new Obstacles(i));
+  let k;
+
+  for (k = 1800; k <= 40500; k += 500) {
+    list.push(new Obstacles(k));
   }
 };
 initObstacle();
@@ -50,8 +52,9 @@ const collisionDetection = () => {
       character.y < list[i].y + list[i].h &&
       character.y + character.h > list[i].y
     ) {
-      alert("Game over !!!");
-      location.reload();
+      alert(`Your score is ${Math.floor(score)}`);
+      score = 0;
+      window.location.href = window.location.href;
       return;
     }
   }

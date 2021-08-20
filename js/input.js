@@ -7,10 +7,14 @@ const input = () => {
     if (e.code === "ArrowDown" || e.code === "KeyS") {
       moreG = true;
     }
+
+    if (e.code === "Enter") {
+      gameStarted = !gameStarted;
+      console.log(gameStarted);
+    }
   };
 
   window.onkeyup = (e) => {
-    console.log(e.code);
     if (e.code === "Space") {
       jumped = false;
     }
