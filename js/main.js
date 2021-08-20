@@ -9,9 +9,9 @@ const update = () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
   character.draw();
   character.update();
+  handleObstacles();
+  collisionDetection();
 
-  obstacle.draw();
-  obstacle.update();
   requestAnimationFrame(update);
 };
 update();
