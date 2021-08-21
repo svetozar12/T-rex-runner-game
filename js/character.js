@@ -1,20 +1,34 @@
+const dragon = document.getElementById("dragon");
+console.log(dragon);
 class Character {
   constructor(x, y, color) {
     this.x = x;
     this.y = y;
     this.originalWidth = 682;
     this.originalHeight = 474;
-    this.w = this.originalWidth / 20;
+    this.w = this.originalWidth / 10;
     this.h = this.originalHeight / 10;
     this.color = color;
     this.dy = 0;
     this.weight = 1;
     this.jumpTimer = 0;
     this.grounded = false;
+    this.frameX = 0;
   }
   draw() {
     context.fillStyle = this.color;
-    context.fillRect(this.x, this.y, this.w, this.h);
+    // context.fillRect(this.x, this.y, this.w, this.h);
+    context.drawImage(
+      dragon,
+      this.frameX * this.originalWidth,
+      0,
+      this.originalWidth,
+      this.originalHeight,
+      this.x - 5,
+      this.y - 20,
+      this.w * 1.7,
+      this.h * 1.7,
+    );
   }
   update() {
     if (jumped) this.grounded = false;
@@ -51,6 +65,11 @@ class Character {
     } else {
       this.grounded = true;
     }
+  }
+  running() {
+    if (this.frameX > 3) {
+      this.frameX = 0;
+    } else this.frameX++;
   }
 }
 const character = new Character(200, 629, 70, 120, "red");

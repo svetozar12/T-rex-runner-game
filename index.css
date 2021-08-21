@@ -13,7 +13,6 @@ body {
 
 #canvas {
   border: 1px solid black;
-  background-color: #ccc;
   width: 1280px;
   height: 720px;
 }

@@ -1,19 +1,33 @@
+const cactus = document.getElementById("cactus");
+
 let list = [];
 let consoleLog = [];
 class Obstacles {
   constructor(x) {
     this.x = x + Math.random() * -1000;
-    this.y = 629;
-    this.w = 30;
-    this.h = 50;
+    this.y = 630;
+    this.originalWidth = 490;
+    this.originalHeight = 570;
+    this.w = this.originalWidth / 5;
+    this.h = this.originalHeight / 5;
     this.color = "green";
     this.obstacleSpeed = 4;
     this.score = 0;
-    // this.randomX = Math.random() * (1600 - 1300) + 1300;
   }
   draw() {
     context.fillStyle = this.color;
-    context.fillRect(this.x, this.y, this.w, this.h);
+    //context.fillRect(this.x, this.y, this.w, this.h);
+    context.drawImage(
+      cactus,
+      0,
+      0,
+      this.originalWidth,
+      this.originalHeight,
+      this.x - 34,
+      this.y - 20,
+      this.w * 1.9,
+      this.h * 1.5,
+    );
   }
   update() {
     this.x -= this.obstacleSpeed;

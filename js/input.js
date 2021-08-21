@@ -10,6 +10,7 @@ const input = () => {
 
     if (e.code === "Enter") {
       gameStarted = !gameStarted;
+      character.frameX = 0;
     }
   };
 
