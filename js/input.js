@@ -10,7 +10,6 @@ const input = () => {
 
     if (e.code === "Enter") {
       gameStarted = !gameStarted;
-      console.log(gameStarted);
     }
   };
 
