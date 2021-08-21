@@ -1,9 +1,11 @@
 class Character {
-  constructor(x, y, w, h, color) {
+  constructor(x, y, color) {
     this.x = x;
     this.y = y;
-    this.w = w;
-    this.h = h;
+    this.originalWidth = 682;
+    this.originalHeight = 474;
+    this.w = this.originalWidth / 20;
+    this.h = this.originalHeight / 10;
     this.color = color;
     this.dy = 0;
     this.weight = 1;

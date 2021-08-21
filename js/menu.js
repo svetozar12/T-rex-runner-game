@@ -14,7 +14,7 @@ class Menu {
   }
 }
 
-const scoreText = new Menu(1, 10, 50, "black");
+// const scoreText = new Menu(1, 10, 50, "black");
 const resumeText = new Menu(
   "Press enter to resume",
   canvas.width * 2.1,
