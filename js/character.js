@@ -4,8 +4,8 @@ class Character {
   constructor(x, y, color) {
     this.x = x;
     this.y = y;
-    this.originalWidth = 682;
-    this.originalHeight = 474;
+    this.originalWidth = 936;
+    this.originalHeight = 643;
     this.w = this.originalWidth / 10;
     this.h = this.originalHeight / 10;
     this.color = color;
@@ -24,10 +24,10 @@ class Character {
       0,
       this.originalWidth,
       this.originalHeight,
-      this.x - 5,
-      this.y - 20,
-      this.w * 1.7,
-      this.h * 1.7,
+      this.x - 30,
+      this.y - 80,
+      this.w * 2,
+      this.h * 2.5,
     );
   }
   update() {
@@ -67,9 +67,12 @@ class Character {
     }
   }
   running() {
-    if (this.frameX > 3) {
+    if (this.frameX > 10) {
       this.frameX = 0;
-    } else this.frameX++;
+    } else {
+      console.log(this.frameX);
+      this.frameX++;
+    }
   }
 }
-const character = new Character(200, 629, 70, 120, "red");
+const character = new Character(200, 629, "red");

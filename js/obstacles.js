@@ -8,25 +8,25 @@ class Obstacles {
     this.y = 630;
     this.originalWidth = 490;
     this.originalHeight = 570;
-    this.w = this.originalWidth / 5;
-    this.h = this.originalHeight / 5;
+    this.w = this.originalWidth / 8;
+    this.h = this.originalHeight / 8;
     this.color = "green";
     this.obstacleSpeed = 4;
     this.score = 0;
   }
   draw() {
     context.fillStyle = this.color;
-    //context.fillRect(this.x, this.y, this.w, this.h);
+    context.fillRect(this.x, this.y, this.w, this.h);
     context.drawImage(
       cactus,
       0,
       0,
       this.originalWidth,
       this.originalHeight,
-      this.x - 34,
+      this.x - 25,
       this.y - 20,
-      this.w * 1.9,
-      this.h * 1.5,
+      this.w * 2,
+      this.h * 1.7,
     );
   }
   update() {
