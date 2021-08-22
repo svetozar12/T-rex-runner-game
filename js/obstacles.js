@@ -11,12 +11,12 @@ class Obstacles {
     this.w = this.originalWidth / 8;
     this.h = this.originalHeight / 8;
     this.color = "green";
-    this.obstacleSpeed = 4;
+    this.obstacleSpeed = 10;
     this.score = 0;
   }
   draw() {
     context.fillStyle = this.color;
-    context.fillRect(this.x, this.y, this.w, this.h);
+    //context.fillRect(this.x, this.y, this.w, this.h);
     context.drawImage(
       cactus,
       0,
@@ -42,7 +42,7 @@ class Obstacles {
 const initObstacle = () => {
   let k;
 
-  for (k = 1800; k <= 40500; k += 500) {
+  for (k = 1800; k <= 4050000; k += 500) {
     list.push(new Obstacles(k));
   }
 };

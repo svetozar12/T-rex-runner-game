@@ -7,7 +7,7 @@ let score = 0;
 let jumped = false;
 let moreG = false;
 let gameStarted = false;
-let gameSpeed = 4;
+let gameSpeed = 10;
 
 const BG = document.getElementById("BG");
 
@@ -49,7 +49,8 @@ const update = () => {
   requestAnimationFrame(update);
   if (gameStarted) {
     // score counting
-    score += 0.02;
+    // score += 0.04;
+    score += 0.06;
     // cleaner rectangle
     context.clearRect(0, 0, canvas.width, canvas.height);
     handleBackground();
